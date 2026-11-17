@@ -1,0 +1,15 @@
+# the github repo for this course
+https://github.com/antonio-corsi/Python-Fundamentals-for-Data-Mgmt
+
+# miniconda (a python distribution)
+https://www.anaconda.com/docs/getting-started/miniconda/install/windows-gui-install
+
+# the official site for Python
+https://python.org
+
+# the official site for PyTorch (the best library for Deep Neural Networks)
+https://pytorch.org/
+
+# the official site for scikit-learn (the best Python library for Machine Learning)
+https://scikit-learn.org/stable/
+
