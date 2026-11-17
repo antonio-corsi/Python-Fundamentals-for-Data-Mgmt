@@ -13,3 +13,6 @@ https://pytorch.org/
 # the official site for scikit-learn (the best Python library for Machine Learning)
 https://scikit-learn.org/stable/
 
+# the official complete list of python packages
+https://pypi.org/
+
