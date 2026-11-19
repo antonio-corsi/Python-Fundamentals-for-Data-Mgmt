@@ -1,0 +1,10 @@
+{
+    // Estensioni consigliate per questa cartella di lavoro: aprendo la cartella,
+    // VS Code propone di installare quelle mancanti.
+    "recommendations": [
+        "ms-python.python",          // Python: scelta dell'ambiente, esecuzione, test
+        "ms-python.debugpy",         // Python Debugger: punti di interruzione, esecuzione passo passo
+        "ms-toolsai.jupyter",        // Jupyter: notebook dentro VS Code
+        "ms-toolsai.datawrangler"    // Data Wrangler: esplorazione visuale delle tabelle
+    ]
+}

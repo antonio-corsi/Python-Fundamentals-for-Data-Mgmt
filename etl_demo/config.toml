@@ -1,0 +1,32 @@
+# ============================================================================
+# PARAMETRI DEL FLUSSO ETL DIMOSTRATIVO
+# ============================================================================
+# Questo file contiene tutto ciò che può cambiare da un ambiente all'altro
+# (sviluppo, collaudo, produzione) senza toccare il codice: cartelle, file del
+# database, soglie delle regole.
+#
+# Il formato si chiama TOML: un formato di testo fatto di sezioni fra parentesi
+# quadre e di righe "nome = valore". Python lo legge con il modulo standard
+# "tomllib", senza installare nulla.
+#
+# Per chi viene da DataStage: questo file svolge il ruolo di un Parameter Set.
+# ============================================================================
+
+[percorsi]
+# I percorsi sono relativi alla cartella del progetto: il codice li trasforma
+# in percorsi completi, così il flusso funziona da qualunque cartella venga
+# lanciato (ad esempio da uno schedulatore).
+cartella_input  = "dati/input"                # dove arrivano i file da elaborare
+cartella_scarti = "dati/scarti"               # dove scriviamo le righe scartate
+cartella_log    = "log"                       # dove scriviamo i file di log
+file_database   = "dati/output/datamart.db"   # database SQLite di destinazione
+
+[regole]
+# Se la percentuale di righe scartate supera questa soglia, il flusso si ferma
+# con un errore e NON carica nulla: un file con troppi scarti è quasi sempre il
+# segnale di un problema a monte (tracciato cambiato, file troncato...).
+soglia_scarti_percentuale = 5.0
+
+# Un movimento è marcato come "rilevante" quando il suo controvalore in euro,
+# senza segno, raggiunge questa cifra. È una soglia puramente dimostrativa.
+soglia_importo_rilevante_eur = 10000.0

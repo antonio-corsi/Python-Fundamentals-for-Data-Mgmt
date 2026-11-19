@@ -1,0 +1,19 @@
+# File e cartelle che Git deve ignorare, cioè NON mettere sotto controllo di versione.
+# Regola generale: sotto Git va il codice, non i dati prodotti dalle esecuzioni.
+
+# --- File prodotti da Python ---
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- Risultati delle esecuzioni del flusso ---
+dati/output/*
+dati/scarti/*
+log/*
+
+# --- File grande per le prove di prestazioni (centinaia di megabyte) ---
+dati/grandi_volumi/*
+
+# --- Eccezione: teniamo i segnaposto che servono a conservare le cartelle vuote ---
+!**/.gitkeep

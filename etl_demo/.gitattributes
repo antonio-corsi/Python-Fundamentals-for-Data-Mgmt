@@ -1,0 +1,3 @@
+# I file .bat di Windows devono avere il fine riga in formato Windows (CRLF),
+# qualunque sia il sistema operativo di chi lavora sul progetto.
+*.bat text eol=crlf

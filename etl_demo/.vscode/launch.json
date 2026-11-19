@@ -1,0 +1,51 @@
+{
+    // Configurazioni di avvio e di debug di VS Code.
+    // Il "debug" è l'esecuzione controllata di un programma: possiamo fermarlo su una
+    // riga (punto di interruzione, in inglese "breakpoint"), guardare il contenuto
+    // delle variabili e poi proseguire un'istruzione alla volta.
+    //
+    // Come si usa: aprire la vista "Run and Debug" (Ctrl+Maiusc+D), scegliere una
+    // configurazione dal menu in alto e premere F5.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            // Chiede la data a ogni avvio, come un job che chiede i propri parametri
+            "name": "ETL: esegui chiedendo la data",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/esegui_etl.py",
+            "args": ["--data", "${input:dataElaborazione}"],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "ETL: giorno normale (2026-11-17)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/esegui_etl.py",
+            "args": ["--data", "2026-11-17"],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "ETL: file corrotto (2026-11-18)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/esegui_etl.py",
+            "args": ["--data", "2026-11-18"],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ],
+    "inputs": [
+        {
+            "id": "dataElaborazione",
+            "type": "promptString",
+            "description": "Data di elaborazione (AAAA-MM-GG)",
+            "default": "2026-11-17"
+        }
+    ]
+}

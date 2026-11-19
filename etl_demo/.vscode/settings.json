@@ -1,0 +1,20 @@
+{
+    // Impostazioni di VS Code valide solo per questa cartella di lavoro.
+
+    // --- Test automatici: usiamo pytest e gli diciamo dove sono i test ---
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestArgs": ["tests"],
+
+    // --- Codifica dei file: UTF-8, così le lettere accentate si leggono ovunque ---
+    "files.encoding": "utf8",
+
+    // --- Cartelle generate automaticamente, nascoste per tenere pulito l'elenco dei file ---
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.pytest_cache": true
+    },
+
+    // --- Un righello verticale a 120 caratteri, la lunghezza massima delle righe del progetto ---
+    "editor.rulers": [120]
+}

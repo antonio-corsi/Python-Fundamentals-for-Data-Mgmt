@@ -1,0 +1,35 @@
+# ============================================================================
+# AMBIENTE CONDA DELLA DEMO
+# ============================================================================
+# Un "ambiente conda" è una cartella che contiene una propria copia di Python e
+# i soli pacchetti che servono a un progetto, isolati dal resto del computer.
+#
+# Questo file descrive l'ambiente in modo che si possa ricreare identico su
+# un'altra macchina con un solo comando:
+#
+#     conda env create -f environment.yml
+#
+# In alternativa, il README riporta i comandi "conda create" e "conda install"
+# equivalenti, da eseguire uno alla volta.
+#
+# I pacchetti vengono presi solo dal canale conda-forge (il "canale" è
+# l'archivio da cui conda scarica i pacchetti). La voce "nodefaults" esclude il
+# canale predefinito di Anaconda: ha lo stesso effetto dell'opzione
+# --override-channels dei comandi "conda install".
+# ============================================================================
+
+name: etl_demo
+
+channels:
+  - conda-forge
+  - nodefaults
+
+dependencies:
+  - python=3.13        # il linguaggio (serve almeno la 3.11, che include il modulo tomllib)
+  - pandas=3.0         # tabelle di dati: la libreria principale del flusso
+  - openpyxl           # lettura dei file Excel (usata da pandas dietro le quinte)
+  - pyarrow            # formato Parquet e colonne di testo più efficienti in pandas
+  - polars             # motore alternativo per i grandi volumi (notebook 02)
+  - python-duckdb      # DuckDB: SQL direttamente sui file (notebook 02)
+  - pytest             # test automatici
+  - ipykernel          # permette a VS Code di eseguire i notebook in questo ambiente
